@@ -1,0 +1,31 @@
+!!! 5
+%html
+  %head
+    %meta{:charset => "UTF-8"}
+    %title= @title
+    %link{:href => "http://fonts.googleapis.com/css?family=Calligraffitti:regular", :rel => "stylesheet"}
+    =stylesheet_link_tag 'core'
+    =javascript_include_tag :defaults
+    =csrf_meta_tag
+  %body
+    %header
+      %h1= link_to raw(image_tag('Compose.png') + 'Organizer notatek'), root_path 
+      %nav
+        %ul
+          %li
+            %a{:href => root_path} Strona główna
+          %li
+            %a{:href => about_path} O projekcie
+          %li  
+            %a{:href => spis_notatek_path} Spis notatek
+          %li
+            %a{:href => new_note_path} Dodaj notatkę
+      =form_tag('/search', :id => 'search_form', :method => :get, :remote => true) do
+        -#%input{:type => "text", :name => "searchBox", :placeholder => "Szukaj..."}
+        =text_field_tag('search_box', nil, :autocomplete => 'off', :placeholder => "Szukaj notatki...") 
+        -#%input{:type => "submit", :value => "Szukaj"}
+        =image_submit_tag('06-magnifying-glass.png');
+    %section
+      =yield
+    %footer
+      %p Organizer notatek / 2011 / kamil89r@gmail.com

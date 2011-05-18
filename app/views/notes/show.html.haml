@@ -1,0 +1,5 @@
+%h1= @note.title
+%p= @note.description
+%div{:class => 'links'}
+  =link_to "Usuń notatkę", @note, :method => 'delete',  :confirm => "Napewno usunąć notatkę: #{@note.title}?"
+  =link_to "Edytuj", edit_note_path(@note)

@@ -1,0 +1,8 @@
+=form_for(@note) do |f|
+  -if @note.errors[:title].count > 0
+    %span= @note.errors[:title].first
+  =f.text_field :title, :placeholder => "Tytuł..."
+  -if @note.errors[:description].count > 0
+    %span= @note.errors[:description].first
+  =f.text_area :description, :placeholder => "Treść notatki..."
+  =f.submit submit_value

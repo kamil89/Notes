@@ -1,0 +1,8 @@
+-@notes.each do |note|
+  %article
+    %h3= link_to note.title, note
+    %p= truncate(note.description, :length => 100)
+
+%h2 Nie zapomnisz niczego
+%article Organizer notatek jest prostą aplikacją pozwalającą organizować swoje notatki. Projekt został oparty o technologię <a href="http://www.rubyonrails.pl">Ruby on rails</a> z wykorzystaniem dodatkowych gemów takich jak: haml, sass. Wykorzystuje bibliotekę jQuery.
+%p Liczba notatek w systemie #{@count}

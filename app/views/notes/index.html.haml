@@ -1,0 +1,8 @@
+-if flash[:notice]
+  %p{:class => "notice"}= raw(flash[:notice] + image_tag('delete.png'))
+
+%h1 Wszystkie notatki w systemie (#{@count})
+-@notes.each do |note|
+  %article
+    %h3= link_to note.title, note
+    %p= note.description

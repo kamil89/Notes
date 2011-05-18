@@ -1,0 +1,3 @@
+%h1 Edytujesz: #{@note.title}
+%p Uzupełnij poniższe pola, a następnie zatwierdź
+=render :partial => 'form', :locals => {:submit_value => "Zapisz zmiany »"}
